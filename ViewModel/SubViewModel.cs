@@ -8,5 +8,6 @@ namespace PowershellAddOn1.ViewModel
 {
     public class SubViewModel
     {
+        public string Name { get; set; }
     }
 }

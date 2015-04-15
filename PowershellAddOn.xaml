@@ -16,11 +16,15 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <ToolBar>
-                <Button Content="test"/>
+                <Button Content="test" Click="Create_Master"/>
             </ToolBar>
-            <DataGrid Grid.Row="1" x:Name="dg_master" ItemsSource="{Binding MasterViewModels}"/>
+            <DataGrid Grid.Row="1" x:Name="dg_master" ItemsSource="{Binding MasterViewModels}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
-
+        <GridSplitter Grid.Row="0" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -32,7 +36,7 @@
             <ListBox x:Name="lb_Details" Grid.Row="1" ItemsSource="{Binding ElementName=dg_master, Path=SelectedItem.SubViewModels}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text=""/>
+                        <TextBlock Text="Name"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

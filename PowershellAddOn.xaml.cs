@@ -33,5 +33,10 @@ namespace PowershellAddOn1
             _addOnViewModel = new AddOnViewModel();
             this.DataContext = _addOnViewModel;
         }
+
+        private void Create_Master(object sender, RoutedEventArgs e)
+        {
+            _addOnViewModel.AddNewMasterViewModel();
+        }
     }
 }

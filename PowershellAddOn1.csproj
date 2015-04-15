@@ -52,6 +52,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\AddOnViewModel.cs" />
+    <Compile Include="ViewModel\MasterViewModel.cs" />
+    <Compile Include="ViewModel\SubViewModel.cs" />
     <Page Include="PowershellAddOn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

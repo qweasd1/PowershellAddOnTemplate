@@ -20,6 +20,8 @@ namespace PowershellAddOn1.ViewModel
         public void AddNewMasterViewModel()
         {
             var newMasterViewModel = new MasterViewModel();
+            newMasterViewModel.Name = "test";
+            newMasterViewModel.AddSubViewModel();
 
             MasterViewModels.Add(newMasterViewModel);
         }
