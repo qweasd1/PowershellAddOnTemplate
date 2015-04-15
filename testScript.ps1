@@ -1,0 +1,2 @@
+Add-Type -Path "C:\Users\Lee\Desktop\Test\Temp\Project\PowershellAddOn1\PowershellAddOn1\bin\Debug\PowershellAddOn1.dll"
+$psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("test",[PowershellAddOn1.PowershellAddOn], $true)

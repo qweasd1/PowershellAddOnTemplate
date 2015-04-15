@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="PowershellAddOn1.PowershellAddOn"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ToolBar>
+                <Button Content="test"/>
+            </ToolBar>
+            <DataGrid Grid.Row="1" x:Name="dg_master" ItemsSource="{Binding MasterViewModels}"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ToolBar>
+                <Button Content="test"/>
+            </ToolBar>
+            <ListBox x:Name="lb_Details" Grid.Row="1" ItemsSource="{Binding ElementName=dg_master, Path=SelectedItem.SubViewModels}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text=""/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</UserControl>
